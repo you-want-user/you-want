@@ -1,0 +1,200 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.body {
+  background-image: linear-gradient(to left bottom, #ff7a7a, #ff9290, #ffa8a6, #ffbebd, #ffd4d3);
+  @apply relative h-screen w-screen flex justify-center;
+}
+
+.background {
+  @apply relative h-screen w-screen opacity-25 overflow-hidden;
+}
+
+.content {
+  font-family: "Poppins", sans-serif;
+  @apply flex m-auto max-w-[1444px] flex-col items-center;
+}
+
+.blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  filter: opacity(0.5) blur(20px);
+  width: 100%;
+}
+
+.clouds {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+}
+
+.container {
+  @apply absolute h-screen flex flex-col items-stretch justify-evenly w-full ml-auto mr-auto z-10;
+}
+
+
+
+
+/*
+
+// Media queries
+
+@mixin screen-mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin screen-tablet {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin screen-desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin screen-mobile-and-tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+// NEW MEDIA QUERIES
+
+@mixin screen-mobile-new {
+  @media (max-width: 680px) {
+    @content;
+  }
+}
+
+@mixin screen-tablet-new {
+  @media (min-width: 680px) and (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin screen-mobile-and-tablet-new {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin screen-desktop-new {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin screen-desktop-L {
+  @media (min-width: 960px) and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin screen-desktop-XL {
+  @media (min-width: 1280px) and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin screen-desktop-XXL {
+  @media (min-width: 1600px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin screen-desktop-XXXL {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+
+// Utils
+
+@mixin fill-primary-svg-icon {
+  filter: $filter-color-primary;
+}
+
+@mixin fill-white-svg-icon {
+  filter:  brightness(0%) invert(100%);
+}
+
+@mixin ellipsis($max-width) {
+  max-width: $max-width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { // IE hack
+    overflow: visible;
+  }
+}
+
+@mixin ellipsis-lines($lines) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+
+@mixin only-ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin no-selectable-text {
+  user-select: none;
+}
+
+@mixin selectable-text {
+  user-select: text;
+}
+
+@mixin background-color-full-width($color) {
+  background-color: $color;
+  position: relative;
+  &:before {
+    content: ' ';
+    left: 0;
+    position: absolute;
+    background-color: $color;
+    top: 0;
+    bottom: 0;
+    margin-left: -200%;
+    width: 200%;
+  }
+  &:after {
+    content: ' ';
+    right: 0;
+    position: absolute;
+    background-color: $color;
+    top: 0;
+    bottom: 0;
+    margin-right: -200%;
+    width: 200%;
+  }
+}
+
+@mixin maxWidthContent($maxwidth) {
+  max-width: $maxwidth;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+@function hex-to-rgb($hex) {
+  @return red($hex), green($hex), blue($hex); // Plain comma seperated RGB values.
+} */

@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.slide-custom {
+  @apply h-[240px] flex justify-center items-center bg-white text-white font-semibold;
+
+  img {
+    @apply w-full h-full object-cover;
+  }
+}
