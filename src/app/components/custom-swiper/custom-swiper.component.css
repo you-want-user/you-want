@@ -3,9 +3,29 @@
 }
 
 .slide-custom {
-  @apply h-[240px] flex justify-center items-center bg-white text-white font-semibold;
+  @apply h-[240px] flex justify-center items-center;
 
   img {
     @apply w-full h-full object-cover;
+  }
+
+  @media (max-width: 640px) {
+    height: 120px;
+  }
+
+  @media (min-width: 640px) and (max-width: 768px) {
+    height: 200px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    height: 200px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    height: 200px;
+  }
+
+  @media (min-width: 1440px) {
+    height: 260px;
   }
 }

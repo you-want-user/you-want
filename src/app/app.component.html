@@ -1,14 +1,14 @@
 <div class="body" role="main">
   <div class="container text-center">
-    <div class="flex justify-center content-center flex-col items-center">
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <h1 class="text-2xl f-semibold mb-10">Do you want to be my friend?</h1>
-      <p class="text-xs f-regular leading-7 max-w-[40rem]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam labore harum molestiae a, excepturi blanditiis! Accusantium sint temporibus numquam reiciendis!</p>
+    <div class="flex justify-center content-center flex-col items-center px-[20px]">
+      <h1 class="text-3xl f-extrabold mb-10 text-primary opacity-80">Do you want to be my friend?</h1>
+      <div class="message-content">
+        <p *ngIf="showMessage" [@fadeInOut]="currentMessage" class="current-messagge f-semibold">{{ currentMessage }}</p>
+        <p *ngIf="!showMessage" [@fadeInOut]="currentMessage" class="current-messagge f-semibold">{{ currentMessage }}</p>
+      </div>
     </div>
     <div>
-      <custom-swiper></custom-swiper>
+      <custom-swiper (imageSelected)="changeImageSelected($event)"></custom-swiper>
     </div>
   </div>
   <div class="background">
@@ -16,5 +16,11 @@
     <img class="blob" [@box2Animation]="blob2" src="./assets/blob-2.svg" alt="">
     <img class="blob" [@box3Animation]="blob3" src="./assets/blob-3.svg" alt="">
     <img class="clouds" src="./assets/cloud.svg" alt="">
+  </div>
+</div>
+<div class="modal" *ngIf="showModal">
+  <div class="backdrop" (click)="showModal = false"></div>
+  <div class="modal-content">
+    <img src="/assets/images/image.png" alt="image">
   </div>
 </div>

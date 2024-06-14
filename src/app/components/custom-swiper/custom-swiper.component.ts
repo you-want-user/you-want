@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, signal } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
 
@@ -9,6 +9,9 @@ import { SwiperOptions } from 'swiper/types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomSwiperComponent {
+
+  @Output() imageSelected = new EventEmitter<string>();
+
   swiperElement = signal<SwiperContainer | null>(null);
   swiperOptions: SwiperOptions = {
     slidesPerView: 'auto',
@@ -29,12 +32,15 @@ export class CustomSwiperComponent {
       slideShadows: true
     },
     breakpoints: {
-      640: {
+      320: {
         slidesPerView: 2,
-        spaceBetween: 20,
-        speed: 4000
+        spaceBetween: 10
       },
       768: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      900: {
         slidesPerView: 3,
         spaceBetween: 40
       },
@@ -42,12 +48,24 @@ export class CustomSwiperComponent {
         slidesPerView: 4,
         spaceBetween: 40
       },
-      1600: {
-        slidesPerView: 5,
-        spaceBetween: 40
-      }
     }
   };
+  photos = [
+    {id: 1, url: '/assets/images/image.png'},
+    {id: 2, url: '/assets/images/image.png'},
+    {id: 3, url: '/assets/images/image.png'},
+    {id: 4, url: '/assets/images/image.png'},
+    {id: 5, url: '/assets/images/image.png'},
+    {id: 6, url: '/assets/images/image.png'},
+    {id: 7, url: '/assets/images/image.png'},
+    {id: 8, url: '/assets/images/image.png'},
+    {id: 9, url: '/assets/images/image.png'},
+    {id: 10, url: '/assets/images/image.png'},
+  ];
+
+  onSelectedImage(image: string) {
+    this.imageSelected.emit(image);
+  }
   ngOnInit() {
     const swiperElementConstructor = document.querySelector('swiper-container');
     Object.assign(swiperElementConstructor!, this.swiperOptions);
