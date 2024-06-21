@@ -21,6 +21,6 @@
 <div class="modal" *ngIf="showModal">
   <div class="backdrop" (click)="showModal = false"></div>
   <div class="modal-content">
-    <img src="/assets/images/image.png" alt="image">
+    <img [src]="imageSelected" alt="Image">
   </div>
 </div>

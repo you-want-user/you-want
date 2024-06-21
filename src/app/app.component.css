@@ -9,7 +9,7 @@
 
 .body {
   background-image: linear-gradient(to left bottom, #ff7a7a, #ff9290, #ffa8a6, #ffbebd, #ffd4d3);
-  @apply relative h-screen w-screen flex justify-center;
+  @apply relative h-screen w-screen min-h-full min-w-full flex justify-center;
 }
 
 .background {
@@ -42,7 +42,7 @@
 }
 
 .container {
-  @apply absolute h-screen flex flex-col items-stretch justify-evenly w-full ml-auto mr-auto z-10;
+  @apply absolute h-auto min-h-full flex flex-col items-stretch justify-evenly w-full ml-auto mr-auto z-10 py-[50px];
 }
 
 .current-messagge {
@@ -51,7 +51,7 @@
 }
 
 .message-content {
-  @apply relative w-[500px];
+  @apply relative w-[500px] h-[150px];
 
   @media (max-width: 640px) {
     width: 100%;
