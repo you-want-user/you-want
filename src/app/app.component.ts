@@ -9,24 +9,39 @@ import { box1Animation, box2Animation, box3Animation, fadeInOut } from './util/a
   animations: [ box1Animation, box2Animation, box3Animation, fadeInOut ],
 })
 export class AppComponent {
-  title: string = 'custom-title';
   showModal = false;
   blob1 = 'show';
   blob2 = 'hide';
   blob3 = 'hide';
 
+  title = "¿Sabes?";
   textMessage = [
-    "Lorem 1 ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, optio reiciendis! Architecto autem eligendi animi excepturi quo error quam nam?",
-    "Lorem 2, ipsum dolor sit amet consectetur adipisicing elit. Eaque vel eos iusto numquam provident autem assumenda dolore, fugit animi fuga.",
-    "Lorem 3 ipsum dolor sit amet, consectetur adipisicing elit. Ad maxime eligendi ea harum recusandae numquam ipsa, consectetur reiciendis fuga! Amet?",
-    "Lorem 4 ipsum, dolor sit amet consectetur adipisicing elit. Cumque rerum magni, nam sapiente laboriosam magnam harum repudiandae omnis. Minima ducimus facere consectetur cum quae dolor eos fugit reprehenderit delectus veritatis.",
-    "Lorem 5, ipsum dolor sit amet consectetur adipisicing elit. Libero, accusamus illo? Voluptas itaque ullam magni, odit modi dignissimos quasi quam!"
+    "Nunca imaginé que aquí en Valencia, España, iba a conocer a una niña loquilla...",
+    "Una niña bastante tierna, una niña bastante trabajadora...",
+    "Una niña que haría lo que sea para cumplir con sus objetivos...",
+    "Una niña que sabe lo que quiere y hacia dónde va...",
+    "Una niña que es el orgullo de su madre...",
+    "Una niña bastante inteligente...",
+    "Y sobre todo, una niña hiperarchimega hermosa...",
+    "Si te preguntabas por qué me gustas, es por todo esto...",
+    "Amo cada uno de esos detalles que tienes, que hacen que uno se vuelva loco.",
+    "Y estoy seguro de que cumplirás todos tus sueños, porque es imposible que...",
+    "no puedas ser recompensada por todo el esfuerzo que haces día a día.",
+    "Este álbum es de los pocos recuerdos que tenemos...",
+    "y que sin importar lo que pase en el futuro, seguramente se incrementará la cantidad de...",
+    "recuerdos inolvidables en ...",
+    "pueblitos mágicos, grandes ciudades, sitios arqueológicos,...",
+    "monumentos arqueológicos, grandes museos, una inmensa pradera verde llena de animalitos,...",
+    "las auroras boreales que tanto sueñas y todos los sueños que tengas.",
+    "Sea lo que sea, Cynnn, siempre estaré allí para tí.",
+    "¡Se te quiere muuuuucho!"
   ];
-  currentMessage = this.textMessage[Math.floor(Math.random() * this.textMessage.length)];
+  currentMessage = this.textMessage[0];
   showMessage = false;
   imageSelected: string;
 
   routerAnimation = 'modal-in';
+  counter = 0;
 
   constructor() { }
 
@@ -56,9 +71,13 @@ export class AppComponent {
   }
 
   startMessageCycle() {
-    interval(3000).subscribe(() => {
-      this.currentMessage = this.textMessage[Math.floor(Math.random() * this.textMessage.length)];
+    interval(5000).subscribe(() => {
+      this.currentMessage = this.textMessage[this.counter];
       this.showMessage = !this.showMessage;
+      this.counter++;
+    });
+    interval(5000 * (this.textMessage.length + 1)).subscribe(() => {
+      this.title = '!Eres la mejor¡ ♡';
     });
   }
 

@@ -1,7 +1,7 @@
 <div class="body" role="main">
   <div class="container text-center">
     <div class="flex justify-center content-center flex-col items-center px-[20px]">
-      <h1 class="text-3xl f-extrabold mb-10 text-primary opacity-80">Do you want to be my friend?</h1>
+      <h1 class="title f-extrabold">{{ title }}</h1>
       <div class="message-content">
         <p *ngIf="showMessage" [@fadeInOut]="currentMessage" class="current-messagge f-semibold">{{ currentMessage }}</p>
         <p *ngIf="!showMessage" [@fadeInOut]="currentMessage" class="current-messagge f-semibold">{{ currentMessage }}</p>
